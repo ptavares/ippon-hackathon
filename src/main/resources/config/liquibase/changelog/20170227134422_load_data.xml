@@ -25,7 +25,7 @@
  <loadData encoding="UTF-8"
                   file="config/liquibase/ingredients.csv"
                   separator=";"
-                  tableName="Ingredient"/>
+                  tableName="ingredient"/>
  <loadData encoding="UTF-8"
                   file="config/liquibase/recipes.csv"
                   separator=";"
