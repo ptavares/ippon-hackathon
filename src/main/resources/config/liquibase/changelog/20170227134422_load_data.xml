@@ -30,5 +30,9 @@
                   file="config/liquibase/recipes.csv"
                   separator=";"
                   tableName="recipe"/>
+ <loadData encoding="UTF-8"
+                  file="config/liquibase/recipe_ingredients.csv"
+                  separator=";"
+                  tableName="recipe_ingredients"/>
     </changeSet>
 </databaseChangeLog>
