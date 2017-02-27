@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "contains",
+            "otherEntityName": "ingredient",
+            "otherEntityRelationshipName": "ingredientCategory"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170227123333",
+    "entityTableName": "ingredient_category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

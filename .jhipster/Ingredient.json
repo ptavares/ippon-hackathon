@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ingredientCategory",
+            "otherEntityName": "ingredientCategory",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "included",
+            "otherEntityName": "recipeIngredients",
+            "otherEntityRelationshipName": "ingredient"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170227123333",
+    "entityTableName": "ingredient",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

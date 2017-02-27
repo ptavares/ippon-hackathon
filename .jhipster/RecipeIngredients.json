@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ingredient",
+            "otherEntityName": "ingredient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "recipe",
+            "otherEntityName": "recipe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "quantity",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "unity",
+            "fieldType": "Unity",
+            "fieldValues": "QUANTITY,GR,ML"
+        }
+    ],
+    "changelogDate": "20170227123333",
+    "entityTableName": "recipe_ingredients",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
