@@ -42,8 +42,8 @@ export class IngredientService {
     }
 
     postIngredients(ingredients: Array<Ingredient>): Observable<Recipe> {
-        let copy: Ingredient = Object.assign({}, ingredients);
-        return this.http.post('api/search-recipe', copy).map((res: Response) => {
+        //let copy: Array<Ingredient> = Object.assign({}, ingredients);
+        return this.http.post('api/search-recipe', ingredients).map((res: Response) => {
             return res.json();
         });
     }

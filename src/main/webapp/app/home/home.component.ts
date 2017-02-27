@@ -6,6 +6,7 @@ import { Account, LoginModalService, Principal } from '../shared';
 import { IngredientService } from '../entities/ingredient/ingredient.service';
 import { Ingredient } from '../entities/ingredient/ingredient.model';
 import { Response } from '@angular/http';
+import { Recipe } from '../entities/recipe/recipe.model';
 
 @Component({
     selector: 'jhi-home',
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
     modalRef: NgbModalRef;
     ingredients : Array<Ingredient>;
     selectedIngredients : Array<Ingredient>;
+    recette : Recipe;
 
     constructor(
         private principal: Principal,
@@ -66,11 +68,10 @@ export class HomeComponent implements OnInit {
 
     postIngredients() {
         console.log("POST ingredients");
-
-        // api/search-recipe
-
+        
                 this.ingredientService.postIngredients(this.selectedIngredients).subscribe((response: Response) => {
                 console.debug("response",response.json());
+                this.recette = response.json();
             }, error => console.debug("error"),
                 () => console.log('complete'));
     }
