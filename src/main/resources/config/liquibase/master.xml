@@ -13,4 +13,5 @@
     <include file="classpath:config/liquibase/changelog/20170227123333_added_entity_constraints_Ingredient.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170227123333_added_entity_constraints_RecipeIngredients.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170227134422_load_data.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>
