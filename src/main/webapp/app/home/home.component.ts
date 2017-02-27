@@ -68,10 +68,10 @@ export class HomeComponent implements OnInit {
 
     postIngredients() {
         console.log("POST ingredients");
-        
+
                 this.ingredientService.postIngredients(this.selectedIngredients).subscribe((response: Response) => {
-                console.debug("response",response.json());
-                this.recette = response.json();
+              //  console.debug("response",response.json());
+                this.recette = response;
             }, error => console.debug("error"),
                 () => console.log('complete'));
     }
