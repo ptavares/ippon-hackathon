@@ -3,6 +3,7 @@ import { Http, Response, URLSearchParams, BaseRequestOptions } from '@angular/ht
 import { Observable } from 'rxjs/Rx';
 
 import { Ingredient } from './ingredient.model';
+import { Recipe } from '../recipe/recipe.model';
 @Injectable()
 export class IngredientService {
 
@@ -40,7 +41,12 @@ export class IngredientService {
         return this.http.delete(`${this.resourceUrl}/${id}`);
     }
 
-
+    postIngredients(ingredients: Array<Ingredient>): Observable<Recipe> {
+        let copy: Ingredient = Object.assign({}, ingredients);
+        return this.http.post('api/search-recipe', copy).map((res: Response) => {
+            return res.json();
+        });
+    }
 
     private createRequestOption(req?: any): BaseRequestOptions {
         let options: BaseRequestOptions = new BaseRequestOptions();

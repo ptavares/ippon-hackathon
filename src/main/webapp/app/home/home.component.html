@@ -16,8 +16,12 @@
         <h1 class="display-4">Cook Smart</h1>
         <div>
             <div *ngFor="let ingredient of ingredients">{{ingredient.name}}
-                <input type="checkbox" (click)="console.debug('click')" (change)="console.debug('change')" />
+                <input type="checkbox" (click)="clicked(ingredient)" />
             </div>
         </div>
+        <div>
+            <div *ngFor="let ingredient of selectedIngredients">{{ingredient.name}}</div>
+        </div>
+        <button (click)="postIngredients()">Recettes</button>
     </div>
 </div>
