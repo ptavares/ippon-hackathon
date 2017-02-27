@@ -1,29 +1,23 @@
-<!--<div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid img-rounded"></span>
-    </div>
-    <div class="col-md-9">
-        <h1 class="display-4">Cook Smart</h1>
-
-    </div>
-</div>-->
-
+<div *ngIf="recette" class="alert alert-success">
+    <strong>RECETTE PROPOSEE : </strong>{{recette.name}}
+</div>
 <div class="row">
     <div class="col-md-3">
         <span class="hipster img-fluid img-rounded"></span>
+        <h1>Cook Smart</h1>
     </div>
-    <div class="col-md-9">
-        <h1 class="display-4">Cook Smart</h1>
-        <div>
-            <div *ngFor="let ingredient of ingredients">{{ingredient.name}}
-                <input type="checkbox" (click)="clicked(ingredient)" />
-            </div>
-        </div>
+    <div class="col-md-3">
+        <p>Choisissez vos ingrédients :</p>
+        <tr *ngFor="let ingredient of ingredients">
+            <td><input type="checkbox" (click)="clicked(ingredient)"/></td>
+            <td>{{ingredient.name}}</td>
+        </tr><br/>
+        <button class="btn btn-primary" (click)="postIngredients()">Recettes</button>
+    </div>
+    <div class="col-md-3">
+        <p>Ingrédients séléctionnés :</p>
         <div>
             <div *ngFor="let ingredient of selectedIngredients">{{ingredient.name}}</div>
         </div>
-        <button (click)="postIngredients()">Recettes</button>
     </div>
-  
-   R: <div *ngIf="recette">{{recette.name}}</div>
 </div>
