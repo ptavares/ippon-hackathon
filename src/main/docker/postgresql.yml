@@ -1,0 +1,11 @@
+version: '2'
+services:
+    cooksmart-postgresql:
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/CookSmart/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=CookSmart
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
