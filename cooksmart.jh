@@ -1,0 +1,29 @@
+entity IngredientCategory {
+	id Long,
+	name String
+}
+
+entity Ingredient {
+	id Long,
+	name String
+}
+
+entity Recipe {
+	id Long,
+	name String
+}
+
+entity RecipeIngredients {
+	quantity Long
+    unity Unity
+}
+
+enum Unity {
+	QUANTITY, GR, ML
+}
+
+relationship OneToMany {
+ Recipe{contains} to RecipeIngredients,
+ Ingredient{included} to RecipeIngredients,
+ IngredientCategory{contains} to Ingredient
+}
