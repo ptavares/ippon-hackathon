@@ -15,13 +15,9 @@
     <div class="col-md-9">
         <h1 class="display-4">Cook Smart</h1>
         <div>
-            <form>
-                <p>Choisissez vos ingrédients :</p>
-                <select>
-                    <option value="" disabled>Ingrédient n°1</option>
-                    <!--<option *ngFor="#ingredient of ingredients">{{ingredient.name}}</option>-->
-                </select>
-            </form>
+            <div *ngFor="let ingredient of ingredients">{{ingredient.name}}
+                <input type="checkbox" (click)="console.debug('click')" (change)="console.debug('change')" />
+            </div>
         </div>
     </div>
 </div>
