@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     ingredients : Array<Ingredient>;
+    selectedIngredients : Array<Ingredient>;
 
     constructor(
         private principal: Principal,
@@ -39,6 +40,8 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+
+        this.selectedIngredients = [];
     }
 
     registerAuthenticationSuccess() {
@@ -49,15 +52,26 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    public changeIngredient(ingredientId) {
-        console.debug('changeIngredient', ingredientId);
-    }
-
     isAuthenticated() {
         return this.principal.isAuthenticated();
     }
 
     login() {
         this.modalRef = this.loginModalService.open();
+    }
+
+    clicked(event) {
+        this.selectedIngredients.push(event);
+    }
+
+    postIngredients() {
+        console.log("POST ingredients");
+
+        // api/search-recipe
+
+                this.ingredientService.postIngredients(this.selectedIngredients).subscribe((response: Response) => {
+                console.debug("response",response.json());
+            }, error => console.debug("error"),
+                () => console.log('complete'));
     }
 }
