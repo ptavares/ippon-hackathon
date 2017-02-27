@@ -20,6 +20,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 /**
  * REST controller for managing IngredientCategory.
@@ -44,7 +45,9 @@ public class SearchRecipe {
         if (ingredientList == null || ingredientList.isEmpty()) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("SearchRecipe", "listEmpty", "Cannot find a recipe without ingredients")).body(null);
         }
-        Recipe recipe = recipeRepository.findOne(1L);
+        Random r = new Random();
+        int recetteNumber = r.nextInt(5);
+        Recipe recipe = recipeRepository.findOne((long)recetteNumber);
 
         return new ResponseEntity<>(recipe, HttpStatus.OK);
 
